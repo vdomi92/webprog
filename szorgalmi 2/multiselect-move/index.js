@@ -39,7 +39,6 @@ const removeOptionsFromSelect = (arrayOfIndices) => {
 //Adding selected elements to options
 const addOptionsFromDataArrayToSelect = (selectNodeRef, arrayOfIndices) => {
   let htmlOptionsArray = createSelectOptionsByIndex(arrayOfIndices);
-  console.log(htmlOptionsArray);
   selectNodeRef.innerHTML += htmlOptionsArray.join('\n');
 };
 
@@ -48,7 +47,6 @@ selectParent.addEventListener('click', (e) => handleArrowButtonClick(e));
 const handleArrowButtonClick = (e) => {
   if (e.target.matches('#left-arrow') || e.target.matches('#right-arrow')) {
     let selectedOptions = getSelectedOptionsOnArrowButtonClick(e);
-
     let selectedIndices = [...selectedOptions].map((elem) => elem.value);
     if (e.target.matches('#left-arrow')) {
       removeOptionsFromSelect(selectedIndices);
