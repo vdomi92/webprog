@@ -32,14 +32,13 @@ const getSelectedOptionsOnArrowButtonClick = (event) => {
 //Removing selected elements from options
 const removeOptionsFromSelect = (arrayOfIndices) => {
   for (let i = 0; i < arrayOfIndices.length; i++) {
-    let node = document.querySelector(`option[value="${arrayOfIndices[i]}"]`);
-    node.remove();
+    document.querySelector(`option[value="${arrayOfIndices[i]}"]`).remove();
   }
 };
 //Adding selected elements to options
 const addOptionsFromDataArrayToSelect = (selectNodeRef, arrayOfIndices) => {
-  let htmlOptionsArray = createSelectOptionsByIndex(arrayOfIndices);
-  selectNodeRef.innerHTML += htmlOptionsArray.join('\n');
+  selectNodeRef.innerHTML +=
+    createSelectOptionsByIndex(arrayOfIndices).join('\n');
 };
 
 //Event listener and handler function for arrow clicks
